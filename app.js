@@ -166,7 +166,7 @@
 
     var win = null;
     try {
-      win = window.open(currentUrl, "_blank", "noopener,noreferrer");
+      win = window.open(currentUrl, "_blank");
     } catch (e) {
       win = null;
     }
