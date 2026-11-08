@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruleta del Azar — VideoAleatorio</title>
+  <meta name="description" content="Gira la ruleta y descubre qué video de YouTube te tocó. Aplicación creada por Consorcioweb.">
+  <meta name="theme-color" content="#0d1b12">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Brillos de fondo -->
+  <div class="bg-glow" aria-hidden="true">
+    <span class="glow glow-1"></span>
+    <span class="glow glow-2"></span>
+  </div>
+
+  <main class="app">
+
+    <header class="head">
+      <h1 class="title">Ruleta del <span class="gold">Azar</span></h1>
+      <p class="subtitle">Gira la ruleta y descubre qué video te toca hoy</p>
+    </header>
+
+    <!-- ===== Ruleta ===== -->
+    <section class="wheel-area" aria-label="Ruleta">
+      <div class="wheel-frame">
+        <div class="pointer" aria-hidden="true"></div>
+        <canvas id="wheel" width="640" height="640" aria-label="Ruleta de canales"></canvas>
+        <div class="hub" aria-hidden="true"></div>
+      </div>
+
+      <button id="spinBtn" class="spin-btn" type="button">
+        <span class="spin-btn-inner">GIRAR</span>
+      </button>
+      <p id="hint" class="hint">Haz clic en <strong>GIRAR</strong> para probar tu suerte</p>
+    </section>
+
+    <!-- ===== Resultado ===== -->
+    <section id="result" class="result" hidden aria-live="polite">
+      <div class="result-card">
+        <div class="result-emoji" aria-hidden="true">🎲</div>
+        <p class="result-kicker">Según tu suerte…</p>
+        <h2 class="result-title">Este video fue seleccionado para ti</h2>
+
+        <p id="videoTitle" class="video-title"></p>
+
+        <p class="result-channel">
+          Canal: <span id="channelName" class="channel-name"></span>
+        </p>
+
+        <a id="watchBtn" class="watch-btn" href="#" target="_blank" rel="noopener noreferrer">
+          <span class="watch-icon" aria-hidden="true">▶</span>
+          Ir al video
+        </a>
+
+        <!-- Enlace de respaldo visible (por si el navegador bloquea pestañas nuevas) -->
+        <p class="url-fallback">
+          Si no se abre, copia este enlace:
+          <a id="videoUrl" href="#" target="_blank" rel="noopener noreferrer"></a>
+        </p>
+
+        <button id="againBtn" class="again-btn" type="button">Girar de nuevo</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Pie de página con marca de agua ===== -->
+  <footer class="footer">
+    <div class="watermark" aria-hidden="true">
+      <span>Consorcioweb</span><span>Consorcioweb</span><span>Consorcioweb</span>
+      <span>Consorcioweb</span><span>Consorcioweb</span><span>Consorcioweb</span>
+    </div>
+    <p class="credit">Aplicación creado por Consorcioweb</p>
+  </footer>
+
+  <script src="videos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
