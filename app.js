@@ -191,7 +191,7 @@
     spinning = true;
     spinBtn.disabled = true;
     resultEl.hidden = true;
-    hint.textContent = "Girando… \u00a1suerte!";
+    hint.textContent = "Seleccionando...";
 
     // Elegir segmento ganador al azar
     var winnerIndex = Math.floor(Math.random() * totalSegments);
@@ -233,7 +233,7 @@
       spinBtn.disabled = false;
 
       if (picked) {
-        hint.textContent = "Haz clic en GIRAR para volver a probar tu suerte";
+        hint.textContent = "Haz clic en GIRAR para volver a seleccionar";
         showResult(picked.channel, picked.video);
       } else {
         hint.textContent = "No se encontraron videos. Intenta de nuevo.";
@@ -252,7 +252,7 @@
 
   againBtn.addEventListener("click", function () {
     resultEl.hidden = true;
-    hint.textContent = "Haz clic en GIRAR para probar tu suerte";
+    hint.textContent = "Haz clic en GIRAR para Buscar";
     spin();
   });
 
